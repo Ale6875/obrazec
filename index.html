@@ -6,7 +6,8 @@
     <title>Create an Account | Sony Entertainment Network</title>
     <link rel="shortcut icon" href="/slike/sonyfav.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="s1.css">
+    <link rel="stylesheet" href="s2.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="main">
@@ -20,39 +21,121 @@
             </button>
         </div>
 
-        <div id="he1">
-            
+        <div id="naslov">
+            <h3>Create an Account</h3>
         </div>
 
-        <div id="he2">
-            <div id="naslov">
-                <h3>Create an Account</h3>
-            </div>
-
-            <div id="pfp">
-                <img src="slike/image.png" alt="Profile picture" id="prof">
-            </div>
-    
-            <div id="but">
-                <button id="create">Create</button></a>
-            </div>
-    
-            <div id="tek">
-                <h5>Already have an account?   <a href="">Sign in</a></h5>
-            </div>
-
+        <div id="prog">
+            <img src="slike/progress_selected.png" alt="" class="dot">
+            <img src="slike/progress_off.png" alt="" class="dot">
+            <img src="slike/progress_off.png" alt="" class="dot">
+            <img src="slike/progress_off.png" alt="" class="dot">
+            <img src="slike/progress_off.png" alt="" class="dot">
+            <img src="slike/progress_off.png" alt="" class="dot">
         </div>
 
-        <div id="he3">
+        <div id="homeLocation">
+            Your home location is used to verify your identity when you contact us. Other players won't be able to see it.
+        </div>
 
+        <div id="countrydiv">
+            Country/Region<br>
+            <select id="country" name="country" class="form-control" onchange="displaySelectedCountry()">
+                <option value="" selected disabled>Select a country</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Canada">Canada</option>
+                <option value="Chile">Chile</option>
+                <option value="China continental">China continental</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="Greece">Greece</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Japan">Japan</option>
+                <option value="Korea">Korea</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Lebanon">Lebanon</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Malta">Malta</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Panama">Panama</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Romania">Romania</option>
+                <option value="Russia">Russia</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia" selected="selected">Slovenia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Taiwan">Taiwan</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="Uruguay">Uruguay</option>
+            </select>
         </div>
         
-    </div>
+        <div id="language" class="language-output">
+            Selected Country: <span id="selectedCountry">None</span>
+        </div>
 
+        <div id="guide">
+            Items you need to enter vary by the country or region you select.
+        </div>
+
+        <div id="bn">
+
+        </div>
+
+    </div>
+    
     <script>
-        document.getElementById("create").onclick = function() {
-            window.location.href = "log.html";
-        };
+        function displaySelectedCountry() {
+            const countrySelect = document.getElementById("country");
+            const selectedCountry = countrySelect.options[countrySelect.selectedIndex].text;
+            const languageOutput = document.getElementById("language");
+            languageOutput.innerText = `Selected Country: ${selectedCountry}`;
+        }
     </script>
+
 </body>
 </html>
